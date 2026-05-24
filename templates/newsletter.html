@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <title>{{ headline }}</title>
+  <style>
+    /* Reset */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+
+    /* Base */
+    body { margin: 0 !important; padding: 0 !important; background-color: #f4f4f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    .email-wrapper { background-color: #f4f4f7; width: 100%; }
+    .email-content { max-width: 600px; margin: 0 auto; }
+
+    /* Header */
+    .header-cell { background-color: #1a1a2e; padding: 32px 40px 28px; border-radius: 12px 12px 0 0; }
+    .brand-name { color: #7b9cff; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 16px 0; }
+    .headline { color: #ffffff; font-size: 28px; font-weight: 800; line-height: 1.25; margin: 0 0 10px 0; }
+    .subheadline { color: #a8b4d0; font-size: 16px; line-height: 1.5; margin: 0; }
+
+    /* Body card */
+    .body-cell { background-color: #ffffff; padding: 36px 40px; }
+
+    /* Intro */
+    .intro-text { color: #374151; font-size: 17px; line-height: 1.7; margin: 0 0 32px 0; font-weight: 400; }
+
+    /* Section */
+    .section-divider { height: 1px; background-color: #e5e7eb; margin: 0 0 28px 0; }
+    .section-title { color: #1a1a2e; font-size: 20px; font-weight: 700; line-height: 1.3; margin: 0 0 14px 0; }
+    .section-body { color: #374151; font-size: 15px; line-height: 1.8; margin: 0 0 20px 0; }
+
+    /* Key stat callout */
+    .stat-box { background-color: #f0f4ff; border-left: 4px solid #4361ee; border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 0 0 24px 0; }
+    .stat-value { color: #1a1a2e; font-size: 32px; font-weight: 800; line-height: 1; display: block; }
+    .stat-label { color: #6b7280; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; display: block; }
+
+    /* Chart image */
+    .chart-img { width: 100%; max-width: 520px; height: auto; border-radius: 8px; display: block; margin: 0 0 24px 0; }
+
+    /* Key takeaways */
+    .takeaways-box { background-color: #fafafa; border: 1px solid #e5e7eb; border-radius: 10px; padding: 24px 28px; margin: 0 0 32px 0; }
+    .takeaways-title { color: #1a1a2e; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 16px 0; }
+    .takeaway-item { color: #374151; font-size: 14px; line-height: 1.6; margin: 0 0 10px 0; padding-left: 20px; position: relative; }
+    .takeaway-bullet { color: #4361ee; font-weight: 700; }
+
+    /* CTA button */
+    .cta-wrapper { text-align: center; margin: 0 0 32px 0; }
+    .cta-button { display: inline-block; background-color: #4361ee; color: #ffffff !important; font-size: 15px; font-weight: 700; text-decoration: none; padding: 14px 32px; border-radius: 8px; letter-spacing: 0.3px; }
+
+    /* Sources */
+    .sources-title { color: #9ca3af; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 8px 0; }
+    .source-item { color: #6b7280; font-size: 12px; line-height: 1.6; margin: 0 0 4px 0; }
+    .source-link { color: #4361ee; text-decoration: none; }
+
+    /* Footer */
+    .footer-cell { background-color: #1a1a2e; padding: 28px 40px; border-radius: 0 0 12px 12px; }
+    .footer-brand { color: #7b9cff; font-size: 14px; font-weight: 700; margin: 0 0 8px 0; }
+    .footer-text { color: #6b7aab; font-size: 12px; line-height: 1.6; margin: 0 0 12px 0; }
+    .footer-links { color: #6b7aab; font-size: 12px; }
+    .footer-link { color: #7b9cff; text-decoration: none; }
+    .footer-sep { color: #3d4a7a; margin: 0 8px; }
+
+    /* Outer padding for clients that ignore body padding */
+    .outer-padding { padding: 24px 16px; }
+
+    /* Mobile */
+    @media only screen and (max-width: 620px) {
+      .outer-padding { padding: 0 !important; }
+      .header-cell { padding: 24px 20px 20px !important; border-radius: 0 !important; }
+      .body-cell { padding: 24px 20px !important; }
+      .footer-cell { padding: 20px !important; border-radius: 0 !important; }
+      .headline { font-size: 22px !important; }
+      .intro-text { font-size: 15px !important; }
+      .section-title { font-size: 17px !important; }
+      .stat-value { font-size: 26px !important; }
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      .email-wrapper, body { background-color: #0d0d1a !important; }
+      .body-cell { background-color: #16162a !important; }
+      .intro-text, .section-body, .source-item { color: #c8d0e8 !important; }
+      .section-title, .headline { color: #e8ecff !important; }
+      .stat-box { background-color: #1e2040 !important; border-left-color: #7b9cff !important; }
+      .stat-value { color: #e8ecff !important; }
+      .stat-label { color: #8895b8 !important; }
+      .takeaways-box { background-color: #1a1a2e !important; border-color: #2d3060 !important; }
+      .takeaways-title, .takeaway-bullet { color: #7b9cff !important; }
+      .takeaway-item { color: #c8d0e8 !important; }
+      .section-divider { background-color: #2d3060 !important; }
+      .sources-title { color: #5a6490 !important; }
+      .source-link { color: #7b9cff !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Preheader: shown in inbox preview, hidden in email body -->
+<span style="display:none;font-size:1px;color:#f4f4f7;max-height:0;overflow:hidden;">{{ preheader_text }}&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</span>
+
+<table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+  <tr>
+    <td class="outer-padding" align="center">
+
+      <!-- Main container: max 600px -->
+      <table class="email-content" width="600" cellpadding="0" cellspacing="0" border="0" role="presentation" style="max-width:600px;width:100%;">
+
+        <!-- ===== HEADER ===== -->
+        <tr>
+          <td class="header-cell">
+            <p class="brand-name">{{ newsletter_name | default('The Brief') }}</p>
+            <h1 class="headline">{{ headline }}</h1>
+            <p class="subheadline">{{ subheadline }}</p>
+          </td>
+        </tr>
+
+        <!-- ===== BODY ===== -->
+        <tr>
+          <td class="body-cell">
+
+            <!-- Intro -->
+            <p class="intro-text">{{ intro_paragraph }}</p>
+
+            {% for section in sections %}
+            <!-- Section divider (skip before first section) -->
+            {% if not loop.first %}
+            <div class="section-divider"></div>
+            {% endif %}
+
+            <!-- Section title -->
+            <h2 class="section-title">{{ section.title }}</h2>
+
+            <!-- Key stat callout (if present) -->
+            {% if section.key_stat %}
+            <div class="stat-box">
+              <span class="stat-value">{{ section.key_stat.value }}</span>
+              <span class="stat-label">{{ section.key_stat.label }}</span>
+            </div>
+            {% endif %}
+
+            <!-- Chart image (if present and URL provided) -->
+            {% if section.chart_ref and image_urls.get(section.chart_ref) %}
+            <img
+              class="chart-img"
+              src="{{ image_urls[section.chart_ref] }}"
+              alt="{{ section.title }} chart"
+              width="520"
+            >
+            {% endif %}
+
+            <!-- Section body -->
+            {% for paragraph in section.body.split('\n\n') %}
+            <p class="section-body">{{ paragraph | trim }}</p>
+            {% endfor %}
+
+            {% endfor %}
+
+            <!-- ===== KEY TAKEAWAYS ===== -->
+            <div class="takeaways-box">
+              <p class="takeaways-title">Key Takeaways</p>
+              {% for takeaway in key_takeaways %}
+              <p class="takeaway-item"><span class="takeaway-bullet">→ </span>{{ takeaway }}</p>
+              {% endfor %}
+            </div>
+
+            <!-- ===== CTA BUTTON ===== -->
+            {% if cta and cta.url %}
+            <div class="cta-wrapper">
+              <!--[if mso]>
+              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"
+                href="{{ cta.url }}" style="height:48px;v-text-anchor:middle;width:200px;" arcsize="17%"
+                strokecolor="#4361ee" fillcolor="#4361ee">
+                <w:anchorlock/>
+                <center style="color:#ffffff;font-family:sans-serif;font-size:15px;font-weight:bold;">{{ cta.button_text }}</center>
+              </v:roundrect>
+              <![endif]-->
+              <!--[if !mso]><!-->
+              <a class="cta-button" href="{{ cta.url }}" target="_blank">{{ cta.button_text }}</a>
+              <!--<![endif]-->
+            </div>
+            {% endif %}
+
+            <!-- ===== SOURCES ===== -->
+            {% if sources %}
+            <p class="sources-title">Sources</p>
+            {% for source in sources %}
+            {% if source.url %}
+            <p class="source-item"><a class="source-link" href="{{ source.url }}" target="_blank">{{ source.title }}</a></p>
+            {% else %}
+            <p class="source-item">{{ source.title }}</p>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
+          </td>
+        </tr>
+
+        <!-- ===== FOOTER ===== -->
+        <tr>
+          <td class="footer-cell">
+            <p class="footer-brand">{{ newsletter_name | default('The Brief') }}</p>
+            <p class="footer-text">You're receiving this because you subscribed. We only send things worth reading.</p>
+            <p class="footer-text" style="margin-bottom:16px;">{{ sender_address | default('') }}</p>
+            <p class="footer-links">
+              {% if unsubscribe_url %}<a class="footer-link" href="{{ unsubscribe_url }}">Unsubscribe</a>{% endif %}
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
