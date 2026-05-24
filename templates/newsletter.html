@@ -2,8 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="x-apple-disable-message-reformatting">
   <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
@@ -35,24 +34,11 @@
       height: 100% !important;
       width: 100% !important;
     }
-    body {
-      font-family: Helvetica, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      font-size: 16px;
-      line-height: 1.3;
-      -ms-text-size-adjust: 100%;
-      -webkit-text-size-adjust: 100%;
-      background-color: #f4f5f6;
-      margin: 0;
-      padding: 0;
-    }
     * {
       -ms-text-size-adjust: 100%;
       -webkit-text-size-adjust: 100%;
     }
-    /* Android 4.4 centering fix */
     div[style*="margin: 16px 0"] { margin: 0 !important; }
-    /* Samsung Android full-viewport fix */
     #MessageViewBody, #MessageWebViewDiv { width: 100% !important; }
     table, td {
       mso-table-lspace: 0pt !important;
@@ -66,8 +52,7 @@
       margin: 0 auto !important;
     }
     img { -ms-interpolation-mode: bicubic; }
-    a { text-decoration: none; color: #0867ec; }
-    /* iOS auto-detected links */
+    a { text-decoration: none; }
     a[x-apple-data-detectors],
     .unstyle-auto-detected-links a,
     .aBn {
@@ -80,26 +65,10 @@
       font-weight: inherit !important;
       line-height: inherit !important;
     }
-    .apple-link a {
-      color: inherit !important;
-      font-family: inherit !important;
-      font-size: inherit !important;
-      font-weight: inherit !important;
-      line-height: inherit !important;
-      text-decoration: none !important;
-    }
-    /* Gmail conversation thread color fix */
     .im { color: inherit !important; }
-    /* Gmail download button suppression */
     .a6S { display: none !important; opacity: 0.01 !important; }
     img.g-img + div { display: none !important; }
-    /* ExternalClass (Outlook.com) */
-    .ExternalClass { width: 100%; }
-    .ExternalClass, .ExternalClass p, .ExternalClass span,
-    .ExternalClass font, .ExternalClass td, .ExternalClass div {
-      line-height: 100%;
-    }
-    /* iPhone viewport min-width fixes */
+
     @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
       u ~ div .email-container { min-width: 320px !important; }
     }
@@ -115,542 +84,319 @@
   <!-- Progressive Enhancements : BEGIN -->
   <style>
 
-    /* ── Layout ────────────────────────────────────────── */
-    .body     { background-color: #f4f5f6; width: 100%; }
-    .container {
-      margin: 0 auto !important;
-      max-width: 600px;
-      padding: 0;
-      padding-top: 24px;
-      width: 600px;
-    }
-    .content {
-      box-sizing: border-box;
-      display: block;
-      margin: 0 auto;
-      max-width: 600px;
-      padding: 0;
+    /* ── Base ─────────────────────────────────────────── */
+    body { background-color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    .email-bg { background-color: #f1f5f9 !important; }
+
+    /* ── Header ───────────────────────────────────────── */
+    .header-cell { background-color: #0f172a; padding: 40px 48px 36px; border-radius: 16px 16px 0 0; }
+    .brand-name { color: #818cf8; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 20px 0; display: block; }
+    .headline { color: #f8fafc; font-size: 32px; font-weight: 800; line-height: 1.2; margin: 0 0 14px 0; letter-spacing: -0.5px; }
+    .subheadline { color: #94a3b8; font-size: 16px; line-height: 1.6; margin: 0; font-weight: 400; }
+
+    /* ── Body ─────────────────────────────────────────── */
+    .body-cell { background-color: #ffffff; padding: 40px 48px; }
+    .darkmode-bg { background-color: #ffffff; }
+
+    /* ── Intro ────────────────────────────────────────── */
+    .intro-text { color: #1e293b; font-size: 17px; line-height: 1.75; margin: 0 0 36px 0; }
+
+    /* ── Section ──────────────────────────────────────── */
+    .section-accent { background-color: #6366f1; width: 3px; }
+    .section-title-cell { padding: 2px 0 2px 14px; }
+    .section-title { color: #0f172a; font-size: 21px; font-weight: 700; line-height: 1.3; margin: 0; letter-spacing: -0.2px; }
+    .section-body { color: #334155; font-size: 15px; line-height: 1.8; margin: 0 0 16px 0; }
+    .section-body-last { color: #334155; font-size: 15px; line-height: 1.8; margin: 0 0 28px 0; }
+
+    /* ── Key stat ─────────────────────────────────────── */
+    .stat-cell { background-color: #0f172a; padding: 24px 28px; border-radius: 12px; }
+    .stat-value { color: #6366f1; font-size: 48px; font-weight: 800; line-height: 1; display: block; letter-spacing: -1px; }
+    .stat-label { color: #94a3b8; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; display: block; }
+
+    /* ── Chart ────────────────────────────────────────── */
+    .chart-img { width: 100%; max-width: 504px; height: auto; border-radius: 10px; display: block; }
+
+    /* ── Takeaways ────────────────────────────────────── */
+    .takeaways-cell { background-color: #f8fafc; border-radius: 12px; padding: 28px 32px; }
+    .takeaways-label { color: #6366f1; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 16px 0; }
+    .takeaway-item { color: #1e293b; font-size: 14px; line-height: 1.65; margin: 0 0 10px 0; }
+    .takeaway-item-last { color: #1e293b; font-size: 14px; line-height: 1.65; margin: 0; }
+    .takeaway-bullet { color: #6366f1; font-weight: 700; }
+
+    /* ── CTA Button ───────────────────────────────────── */
+    .button-td, .button-a { transition: all 100ms ease-in; }
+    .button-td-primary { border-radius: 10px; background: #6366f1; }
+    .button-a-primary { background: #6366f1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 15px; text-decoration: none; padding: 15px 36px; color: #ffffff; display: block; border-radius: 10px; }
+    .button-td-primary:hover, .button-a-primary:hover { background: #4f46e5 !important; }
+
+    /* ── Sources ──────────────────────────────────────── */
+    .sources-label { color: #94a3b8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 10px 0; }
+    .source-item { color: #64748b; font-size: 12px; line-height: 1.6; margin: 0 0 4px 0; }
+    .source-link { color: #6366f1; }
+
+    /* ── Footer ───────────────────────────────────────── */
+    .footer-cell { background-color: #0f172a; padding: 32px 48px; border-radius: 0 0 16px 16px; }
+    .footer-brand { color: #818cf8; font-size: 13px; font-weight: 700; margin: 0 0 10px 0; }
+    .footer-text { color: #475569; font-size: 12px; line-height: 1.65; margin: 0 0 6px 0; }
+    .footer-link { color: #818cf8; }
+
+    /* ── Mobile ───────────────────────────────────────── */
+    @media screen and (max-width: 600px) {
+      .email-container { width: 100% !important; margin: auto !important; }
+      .header-cell { padding: 28px 24px 24px !important; border-radius: 0 !important; }
+      .body-cell { padding: 28px 24px !important; }
+      .footer-cell { padding: 24px !important; border-radius: 0 !important; }
+      .headline { font-size: 24px !important; }
+      .section-title { font-size: 18px !important; }
+      .stat-value { font-size: 38px !important; }
+      .takeaways-cell { padding: 20px 22px !important; }
+      .email-container p { font-size: 16px !important; }
     }
 
-    /* ── Card ──────────────────────────────────────────── */
-    .main {
-      background: #ffffff;
-      border: 1px solid #eaebed;
-      border-radius: 16px;
-      width: 100%;
-    }
-    .wrapper {
-      box-sizing: border-box;
-      padding: 32px 40px;
-    }
-
-    /* ── Preheader ─────────────────────────────────────── */
-    .preheader {
-      color: transparent;
-      display: none;
-      height: 0;
-      max-height: 0;
-      max-width: 0;
-      opacity: 0;
-      overflow: hidden;
-      mso-hide: all;
-      visibility: hidden;
-      width: 0;
-    }
-
-    /* ── Brand / Header ────────────────────────────────── */
-    .brand-name {
-      color: #0867ec;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin: 0 0 20px 0;
-      display: block;
-    }
-    .headline {
-      color: #1a1a1a;
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 1.25;
-      margin: 0 0 10px 0;
-    }
-    .subheadline {
-      color: #6b7280;
-      font-size: 16px;
-      line-height: 1.6;
-      margin: 0 0 28px 0;
-    }
-    .header-divider {
-      height: 1px;
-      background-color: #eaebed;
-      margin: 0 0 28px 0;
-      font-size: 0;
-      line-height: 0;
-    }
-
-    /* ── Typography ────────────────────────────────────── */
-    p {
-      font-family: Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: normal;
-      margin: 0;
-      margin-bottom: 16px;
-    }
-    .intro-text {
-      color: #374151;
-      font-size: 16px;
-      line-height: 1.7;
-      margin: 0 0 28px 0;
-    }
-
-    /* ── Section ───────────────────────────────────────── */
-    .section-divider {
-      height: 1px;
-      background-color: #eaebed;
-      margin: 0 0 24px 0;
-      font-size: 0;
-      line-height: 0;
-    }
-    .section-title-wrap {
-      border-left: 3px solid #0867ec;
-      padding-left: 12px;
-      margin: 0 0 14px 0;
-    }
-    .section-title {
-      color: #111827;
-      font-size: 19px;
-      font-weight: 700;
-      line-height: 1.3;
-      margin: 0;
-    }
-    .section-body {
-      color: #374151;
-      font-size: 15px;
-      line-height: 1.75;
-      margin: 0 0 14px 0;
-    }
-    .section-body-last {
-      color: #374151;
-      font-size: 15px;
-      line-height: 1.75;
-      margin: 0 0 24px 0;
-    }
-
-    /* ── Key stat ──────────────────────────────────────── */
-    .stat-box {
-      background-color: #eff6ff;
-      border-left: 3px solid #0867ec;
-      border-radius: 0 8px 8px 0;
-      padding: 16px 20px;
-      margin: 0 0 20px 0;
-    }
-    .stat-value {
-      color: #0867ec;
-      font-size: 40px;
-      font-weight: 700;
-      line-height: 1;
-      display: block;
-    }
-    .stat-label {
-      color: #6b7280;
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-top: 4px;
-      display: block;
-    }
-
-    /* ── Chart image ───────────────────────────────────── */
-    .chart-img {
-      width: 100%;
-      max-width: 520px;
-      height: auto;
-      border-radius: 8px;
-      border: 1px solid #eaebed;
-      display: block;
-      margin: 0 0 20px 0;
-    }
-
-    /* ── Takeaways ─────────────────────────────────────── */
-    .takeaways-box {
-      background-color: #f9fafb;
-      border: 1px solid #eaebed;
-      border-radius: 10px;
-      padding: 20px 24px;
-      margin: 0 0 28px 0;
-    }
-    .takeaways-title {
-      color: #6b7280;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin: 0 0 14px 0;
-    }
-    .takeaway-item {
-      color: #374151;
-      font-size: 14px;
-      line-height: 1.6;
-      margin: 0 0 10px 0;
-    }
-    .takeaway-item-last {
-      color: #374151;
-      font-size: 14px;
-      line-height: 1.6;
-      margin: 0;
-    }
-    .takeaway-bullet { color: #0867ec; font-weight: 700; }
-
-    /* ── CTA Button ────────────────────────────────────── */
-    .btn {
-      box-sizing: border-box;
-      min-width: 100% !important;
-      width: 100%;
-    }
-    .btn > tbody > tr > td { padding-bottom: 20px; }
-    .btn table { width: auto; }
-    .btn table td {
-      background-color: #ffffff;
-      border-radius: 4px;
-      text-align: center;
-    }
-    .btn a {
-      background-color: #ffffff;
-      border: solid 2px #0867ec;
-      border-radius: 4px;
-      box-sizing: border-box;
-      color: #0867ec;
-      cursor: pointer;
-      display: inline-block;
-      font-size: 16px;
-      font-weight: bold;
-      margin: 0;
-      padding: 12px 24px;
-      text-decoration: none;
-      text-transform: capitalize;
-    }
-    .btn-primary table td { background-color: #0867ec; }
-    .btn-primary a {
-      background-color: #0867ec;
-      border-color: #0867ec;
-      color: #ffffff;
-    }
-    @media all {
-      .btn-primary table td:hover { background-color: #0550c9 !important; }
-      .btn-primary a:hover { background-color: #0550c9 !important; border-color: #0550c9 !important; }
-    }
-
-    /* ── Sources ───────────────────────────────────────── */
-    .sources-divider {
-      height: 1px;
-      background-color: #eaebed;
-      margin: 0 0 16px 0;
-      font-size: 0;
-      line-height: 0;
-    }
-    .sources-title {
-      color: #9ca3af;
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin: 0 0 8px 0;
-    }
-    .source-item {
-      color: #6b7280;
-      font-size: 12px;
-      line-height: 1.6;
-      margin: 0 0 4px 0;
-    }
-    .source-link { color: #0867ec; text-decoration: underline; }
-
-    /* ── Footer ────────────────────────────────────────── */
-    .footer {
-      clear: both;
-      padding-top: 24px;
-      padding-bottom: 24px;
-      text-align: center;
-      width: 100%;
-    }
-    .footer td, .footer p, .footer span, .footer a {
-      color: #9a9ea6;
-      font-size: 14px;
-      text-align: center;
-    }
-    .footer a { color: #9a9ea6; text-decoration: underline; }
-
-    /* ── Mobile ────────────────────────────────────────── */
-    @media only screen and (max-width: 640px) {
-      .main p, .main td, .main span { font-size: 16px !important; }
-      .wrapper { padding: 20px 16px !important; }
-      .content { padding: 0 !important; }
-      .container { padding: 0 !important; padding-top: 8px !important; width: 100% !important; }
-      .main { border-left-width: 0 !important; border-radius: 0 !important; border-right-width: 0 !important; }
-      .btn table { max-width: 100% !important; width: 100% !important; }
-      .btn a { font-size: 16px !important; max-width: 100% !important; width: 100% !important; }
-      .headline { font-size: 22px !important; }
-      .section-title { font-size: 17px !important; }
-      .stat-value { font-size: 32px !important; }
-    }
-
-    /* ── Dark Mode ─────────────────────────────────────── */
+    /* ── Dark Mode ────────────────────────────────────── */
     @media (prefers-color-scheme: dark) {
-      body, .body { background-color: #1a1a1a !important; }
-      .main { background-color: #2a2a2a !important; border-color: #3a3a3a !important; }
-      .headline { color: #f3f4f6 !important; }
-      .subheadline, .intro-text, .section-body, .section-body-last { color: #d1d5db !important; }
-      .section-title { color: #f3f4f6 !important; }
-      .header-divider, .section-divider, .sources-divider { background-color: #3a3a3a !important; }
-      .stat-box { background-color: #1e3a5f !important; border-left-color: #3b82f6 !important; }
-      .stat-value { color: #60a5fa !important; }
-      .stat-label { color: #9ca3af !important; }
-      .takeaways-box { background-color: #1f2937 !important; border-color: #374151 !important; }
-      .takeaways-title { color: #6b7280 !important; }
-      .takeaway-item, .takeaway-item-last { color: #d1d5db !important; }
-      .takeaway-bullet { color: #60a5fa !important; }
-      .source-item { color: #6b7280 !important; }
-      .source-link { color: #60a5fa !important; }
-      .brand-name { color: #60a5fa !important; }
+      .email-bg { background: #0a0f1e !important; }
+      .darkmode-bg { background-color: #111827 !important; }
+      .intro-text { color: #cbd5e1 !important; }
+      .section-title { color: #f1f5f9 !important; }
+      .section-body, .section-body-last { color: #94a3b8 !important; }
+      .takeaways-cell { background-color: #0f172a !important; border-color: #1e293b !important; }
+      .takeaways-label { color: #818cf8 !important; }
+      .takeaway-item, .takeaway-item-last { color: #cbd5e1 !important; }
+      .takeaway-bullet { color: #818cf8 !important; }
+      .source-item { color: #475569 !important; }
+      .source-link { color: #818cf8 !important; }
+      .brand-name { color: #818cf8 !important; }
+      .button-td-primary, .button-td-primary a { background: #6366f1 !important; color: #ffffff !important; }
     }
 
   </style>
   <!-- Progressive Enhancements : END -->
 
 </head>
-<!--
-  Background defined in 3 places for maximum client coverage:
-  1. body tag — most clients
-  2. .body table — Gmail/Yahoo/AOL web
-  3. MSO conditional — Windows 10 Mail
--->
-<body style="background-color: #f4f5f6; margin: 0; padding: 0 !important; mso-line-height-rule: exactly;" class="body">
-  <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body" style="background-color: #f4f5f6; width: 100%;">
-    <tr>
-      <td>&nbsp;</td>
-      <td class="container" style="max-width: 600px; padding: 0; padding-top: 24px; width: 600px; margin: 0 auto;">
-        <div class="content email-container" style="box-sizing: border-box; display: block; margin: 0 auto; max-width: 600px; padding: 0;">
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f1f5f9;" class="email-bg">
+<center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #f1f5f9;" class="email-bg">
+  <!--[if mso | IE]>
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f1f5f9;" class="email-bg">
+  <tr><td>
+  <![endif]-->
 
-          <!-- Preheader text (hidden) -->
-          <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">{{ preheader_text }}</span>
-          <!-- Preview text spacing hack -->
-          <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div>
+  <!-- Preheader : BEGIN -->
+  <div style="max-height: 0; overflow: hidden; mso-hide: all;" aria-hidden="true">{{ preheader_text }}</div>
+  <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div>
+  <!-- Preheader : END -->
 
-          <!-- ===== WHITE CARD : BEGIN ===== -->
-          <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="main" style="background: #ffffff; border: 1px solid #eaebed; border-radius: 16px; width: 100%;">
+  <div style="max-width: 600px; margin: 0 auto; padding: 24px 0;" class="email-container">
+    <!--[if mso]>
+    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600">
+    <tr><td>
+    <![endif]-->
+
+    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px;">
+
+      <!-- ===== HEADER ===== -->
+      <tr>
+        <td class="header-cell" style="background-color: #0f172a; padding: 40px 48px 36px; border-radius: 16px 16px 0 0;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
             <tr>
-              <td class="wrapper" style="box-sizing: border-box; padding: 32px 40px;">
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+              <td>
+                <p class="brand-name" style="color: #818cf8; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 20px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{ newsletter_name | default('The Brief') }}</p>
+                <h1 class="headline" style="color: #f8fafc; font-size: 32px; font-weight: 800; line-height: 1.2; margin: 0 0 14px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{ headline }}</h1>
+                <p class="subheadline" style="color: #94a3b8; font-size: 16px; line-height: 1.6; margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{ subheadline }}</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!-- Indigo accent line -->
+      <tr>
+        <td aria-hidden="true" height="3" style="height: 3px; line-height: 3px; font-size: 0; background-color: #6366f1;">&nbsp;</td>
+      </tr>
 
-                  <!-- Brand name -->
+      <!-- ===== BODY ===== -->
+      <tr>
+        <td class="body-cell darkmode-bg" style="background-color: #ffffff; padding: 40px 48px;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+
+            <!-- Intro -->
+            <tr>
+              <td>
+                <p class="intro-text" style="color: #1e293b; font-size: 17px; line-height: 1.75; margin: 0 0 36px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{ intro_paragraph }}</p>
+              </td>
+            </tr>
+
+            {% for section in sections %}
+
+            {% if not loop.first %}
+            <tr>
+              <td style="padding: 0 0 28px 0;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                   <tr>
-                    <td>
-                      <p class="brand-name" style="color: #0867ec; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 20px 0; font-family: Helvetica, sans-serif;">{{ newsletter_name | default('The Brief') }}</p>
+                    <td style="height: 1px; background-color: #e2e8f0; font-size: 0; line-height: 0;">&nbsp;</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            {% endif %}
+
+            <!-- Section title -->
+            <tr>
+              <td style="padding: 0 0 16px 0;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td class="section-accent" width="3" style="background-color: #6366f1; width: 3px; border-radius: 2px;">&nbsp;</td>
+                    <td class="section-title-cell" style="padding: 2px 0 2px 14px;">
+                      <h2 class="section-title" style="color: #0f172a; font-size: 21px; font-weight: 700; line-height: 1.3; margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{ section.title }}</h2>
                     </td>
                   </tr>
+                </table>
+              </td>
+            </tr>
 
-                  <!-- Headline + subheadline -->
+            <!-- Key stat callout -->
+            {% if section.key_stat %}
+            <tr>
+              <td style="padding: 0 0 24px 0;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border-radius: 12px; background-color: #0f172a;">
                   <tr>
-                    <td>
-                      <h1 class="headline" style="color: #1a1a1a; font-size: 28px; font-weight: 700; line-height: 1.25; margin: 0 0 10px 0; font-family: Helvetica, sans-serif;">{{ headline }}</h1>
-                      <p class="subheadline" style="color: #6b7280; font-size: 16px; line-height: 1.6; margin: 0 0 28px 0; font-family: Helvetica, sans-serif;">{{ subheadline }}</p>
+                    <td class="stat-cell" style="background-color: #0f172a; padding: 24px 28px; border-radius: 12px;">
+                      <span class="stat-value" style="color: #6366f1; font-size: 48px; font-weight: 800; line-height: 1; display: block; letter-spacing: -1px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{ section.key_stat.value }}</span>
+                      <span class="stat-label" style="color: #94a3b8; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; display: block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{ section.key_stat.label }}</span>
                     </td>
                   </tr>
+                </table>
+              </td>
+            </tr>
+            {% endif %}
 
-                  <!-- Header divider -->
+            <!-- Chart image -->
+            {% if section.chart_ref and image_urls.get(section.chart_ref) %}
+            <tr>
+              <td style="padding: 0 0 24px 0;">
+                <img class="chart-img g-img" src="{{ image_urls[section.chart_ref] }}" alt="{{ section.title }} chart" width="504" border="0" style="width: 100%; max-width: 504px; height: auto; border-radius: 10px; display: block; outline: none; text-decoration: none;">
+              </td>
+            </tr>
+            {% endif %}
+
+            <!-- Section body -->
+            {% set paragraphs = section.body.split('\n\n') %}
+            {% for paragraph in paragraphs %}
+            <tr>
+              <td>
+                {% if loop.last %}
+                <p class="section-body-last" style="color: #334155; font-size: 15px; line-height: 1.8; margin: 0 0 28px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{ paragraph | trim }}</p>
+                {% else %}
+                <p class="section-body" style="color: #334155; font-size: 15px; line-height: 1.8; margin: 0 0 16px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{ paragraph | trim }}</p>
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+
+            {% endfor %}
+
+            <!-- ===== KEY TAKEAWAYS ===== -->
+            <tr>
+              <td style="padding: 8px 0 36px 0;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="border-radius: 12px; border: 1px solid #e2e8f0; background-color: #f8fafc;">
                   <tr>
-                    <td class="header-divider" style="height: 1px; background-color: #eaebed; font-size: 0; line-height: 0; padding: 0; margin: 0 0 28px 0;">&nbsp;</td>
-                  </tr>
-
-                  <!-- Intro -->
-                  <tr>
-                    <td>
-                      <p class="intro-text" style="color: #374151; font-size: 16px; line-height: 1.7; margin: 0 0 28px 0; font-family: Helvetica, sans-serif;">{{ intro_paragraph }}</p>
-                    </td>
-                  </tr>
-
-                  {% for section in sections %}
-
-                  <!-- Section divider (skip before first) -->
-                  {% if not loop.first %}
-                  <tr>
-                    <td class="section-divider" style="height: 1px; background-color: #eaebed; font-size: 0; line-height: 0; padding: 0; margin: 0 0 24px 0;">&nbsp;</td>
-                  </tr>
-                  {% endif %}
-
-                  <!-- Section title -->
-                  <tr>
-                    <td style="padding: 0 0 14px 0;">
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                        <tr>
-                          <td width="3" style="background-color: #0867ec; width: 3px; border-radius: 2px;">&nbsp;</td>
-                          <td style="padding: 2px 0 2px 12px;">
-                            <h2 class="section-title" style="color: #111827; font-size: 19px; font-weight: 700; line-height: 1.3; margin: 0; font-family: Helvetica, sans-serif;">{{ section.title }}</h2>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-
-                  <!-- Key stat callout -->
-                  {% if section.key_stat %}
-                  <tr>
-                    <td style="padding: 0 0 20px 0;">
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #eff6ff; border-left: 3px solid #0867ec; border-radius: 0 8px 8px 0;">
-                        <tr>
-                          <td class="stat-box" style="background-color: #eff6ff; padding: 16px 20px;">
-                            <span class="stat-value" style="color: #0867ec; font-size: 40px; font-weight: 700; line-height: 1; display: block; font-family: Helvetica, sans-serif;">{{ section.key_stat.value }}</span>
-                            <span class="stat-label" style="color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 4px; display: block; font-family: Helvetica, sans-serif;">{{ section.key_stat.label }}</span>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                  {% endif %}
-
-                  <!-- Chart image -->
-                  {% if section.chart_ref and image_urls.get(section.chart_ref) %}
-                  <tr>
-                    <td style="padding: 0 0 20px 0;">
-                      <img class="chart-img g-img" src="{{ image_urls[section.chart_ref] }}" alt="{{ section.title }} chart" width="520" border="0" style="width: 100%; max-width: 520px; height: auto; border-radius: 8px; border: 1px solid #eaebed; display: block; outline: none; text-decoration: none;">
-                    </td>
-                  </tr>
-                  {% endif %}
-
-                  <!-- Section body paragraphs -->
-                  {% set paragraphs = section.body.split('\n\n') %}
-                  {% for paragraph in paragraphs %}
-                  <tr>
-                    <td>
+                    <td class="takeaways-cell" style="background-color: #f8fafc; border-radius: 12px; padding: 28px 32px;">
+                      <p class="takeaways-label" style="color: #6366f1; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 16px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">Key Takeaways</p>
+                      {% for takeaway in key_takeaways %}
                       {% if loop.last %}
-                      <p class="section-body-last" style="color: #374151; font-size: 15px; line-height: 1.75; margin: 0 0 24px 0; font-family: Helvetica, sans-serif;">{{ paragraph | trim }}</p>
+                      <p class="takeaway-item-last" style="color: #1e293b; font-size: 14px; line-height: 1.65; margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"><span class="takeaway-bullet" style="color: #6366f1; font-weight: 700;">&#x2714;&nbsp;</span>{{ takeaway }}</p>
                       {% else %}
-                      <p class="section-body" style="color: #374151; font-size: 15px; line-height: 1.75; margin: 0 0 14px 0; font-family: Helvetica, sans-serif;">{{ paragraph | trim }}</p>
-                      {% endif %}
-                    </td>
-                  </tr>
-                  {% endfor %}
-
-                  {% endfor %}
-
-                  <!-- ===== KEY TAKEAWAYS ===== -->
-                  <tr>
-                    <td style="padding: 4px 0 0 0;">
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f9fafb; border: 1px solid #eaebed; border-radius: 10px;">
-                        <tr>
-                          <td class="takeaways-box" style="background-color: #f9fafb; border-radius: 10px; padding: 20px 24px;">
-                            <p class="takeaways-title" style="color: #6b7280; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 14px 0; font-family: Helvetica, sans-serif;">Key Takeaways</p>
-                            {% for takeaway in key_takeaways %}
-                            {% if loop.last %}
-                            <p class="takeaway-item-last" style="color: #374151; font-size: 14px; line-height: 1.6; margin: 0; font-family: Helvetica, sans-serif;"><span class="takeaway-bullet" style="color: #0867ec; font-weight: 700;">&#8594;&nbsp;</span>{{ takeaway }}</p>
-                            {% else %}
-                            <p class="takeaway-item" style="color: #374151; font-size: 14px; line-height: 1.6; margin: 0 0 10px 0; font-family: Helvetica, sans-serif;"><span class="takeaway-bullet" style="color: #0867ec; font-weight: 700;">&#8594;&nbsp;</span>{{ takeaway }}</p>
-                            {% endif %}
-                            {% endfor %}
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-
-                  <!-- Spacer -->
-                  <tr>
-                    <td aria-hidden="true" height="28" style="height: 28px; font-size: 0; line-height: 0;">&nbsp;</td>
-                  </tr>
-
-                  <!-- ===== CTA BUTTON ===== -->
-                  {% if cta and cta.url %}
-                  <tr>
-                    <td>
-                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="box-sizing: border-box; min-width: 100% !important; width: 100%;">
-                        <tbody>
-                          <tr>
-                            <td align="center" style="padding-bottom: 20px;">
-                              <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: auto;">
-                                <tbody>
-                                  <tr>
-                                    <td style="background-color: #0867ec; border-radius: 4px; text-align: center;">
-                                      <!--[if mso]>
-                                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"
-                                        href="{{ cta.url }}" style="height:42px;v-text-anchor:middle;width:200px;" arcsize="10%"
-                                        strokecolor="#0867ec" fillcolor="#0867ec">
-                                        <w:anchorlock/>
-                                        <center style="color:#ffffff;font-family:sans-serif;font-size:15px;font-weight:bold;">{{ cta.button_text }}</center>
-                                      </v:roundrect>
-                                      <![endif]-->
-                                      <!--[if !mso]><!-->
-                                      <a href="{{ cta.url }}" target="_blank" style="background-color: #0867ec; border: solid 2px #0867ec; border-radius: 4px; box-sizing: border-box; color: #ffffff; cursor: pointer; display: inline-block; font-size: 15px; font-weight: bold; margin: 0; padding: 12px 24px; text-decoration: none; text-transform: capitalize; font-family: Helvetica, sans-serif;">{{ cta.button_text }}</a>
-                                      <!--<![endif]-->
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
-                  {% endif %}
-
-                  <!-- ===== SOURCES ===== -->
-                  {% if sources %}
-                  <tr>
-                    <td class="sources-divider" style="height: 1px; background-color: #eaebed; font-size: 0; line-height: 0; padding: 0; margin: 0 0 16px 0;">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p class="sources-title" style="color: #9ca3af; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 8px 0; font-family: Helvetica, sans-serif;">Sources</p>
-                      {% for source in sources %}
-                      {% if source.url %}
-                      <p class="source-item" style="color: #6b7280; font-size: 12px; line-height: 1.6; margin: 0 0 4px 0; font-family: Helvetica, sans-serif;"><a class="source-link" href="{{ source.url }}" target="_blank" style="color: #0867ec; text-decoration: underline;">{{ source.title }}</a></p>
-                      {% else %}
-                      <p class="source-item" style="color: #6b7280; font-size: 12px; line-height: 1.6; margin: 0 0 4px 0; font-family: Helvetica, sans-serif;">{{ source.title }}</p>
+                      <p class="takeaway-item" style="color: #1e293b; font-size: 14px; line-height: 1.65; margin: 0 0 10px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"><span class="takeaway-bullet" style="color: #6366f1; font-weight: 700;">&#x2714;&nbsp;</span>{{ takeaway }}</p>
                       {% endif %}
                       {% endfor %}
                     </td>
                   </tr>
-                  {% endif %}
-
                 </table>
               </td>
             </tr>
+
+            <!-- ===== CTA BUTTON ===== -->
+            {% if cta and cta.url %}
+            <tr>
+              <td style="padding: 0 0 36px 0; text-align: center;">
+                <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                  <tr>
+                    <td class="button-td button-td-primary" style="border-radius: 10px; background: #6366f1;">
+                      <!--[if mso]>
+                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"
+                        href="{{ cta.url }}" style="height:46px;v-text-anchor:middle;width:220px;" arcsize="22%"
+                        strokecolor="#6366f1" fillcolor="#6366f1">
+                        <w:anchorlock/>
+                        <center style="color:#ffffff;font-family:sans-serif;font-size:15px;font-weight:bold;">{{ cta.button_text }}</center>
+                      </v:roundrect>
+                      <![endif]-->
+                      <!--[if !mso]><!-->
+                      <a class="button-a button-a-primary" href="{{ cta.url }}" target="_blank" style="background: #6366f1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 15px; text-decoration: none; padding: 15px 36px; color: #ffffff; display: block; border-radius: 10px;">{{ cta.button_text }}</a>
+                      <!--<![endif]-->
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            {% endif %}
+
+            <!-- ===== SOURCES ===== -->
+            {% if sources %}
+            <tr>
+              <td style="border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                <p class="sources-label" style="color: #94a3b8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 10px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">Sources</p>
+                {% for source in sources %}
+                {% if source.url %}
+                <p class="source-item" style="color: #64748b; font-size: 12px; line-height: 1.6; margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"><a class="source-link" href="{{ source.url }}" target="_blank" style="color: #6366f1;">{{ source.title }}</a></p>
+                {% else %}
+                <p class="source-item" style="color: #64748b; font-size: 12px; line-height: 1.6; margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{ source.title }}</p>
+                {% endif %}
+                {% endfor %}
+              </td>
+            </tr>
+            {% endif %}
+
           </table>
-          <!-- ===== WHITE CARD : END ===== -->
+        </td>
+      </tr>
 
-          <!-- ===== FOOTER ===== -->
-          <div class="footer" style="clear: both; padding-top: 24px; padding-bottom: 24px; text-align: center; width: 100%;">
-            <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
-              <tr>
-                <td class="content-block" style="font-family: Helvetica, sans-serif; vertical-align: top; padding-bottom: 8px; font-size: 14px; color: #9a9ea6; text-align: center;">
-                  <span class="apple-link" style="color: #9a9ea6; font-size: 14px; text-align: center;">{{ newsletter_name | default('The Brief') }}</span>
-                  {% if sender_address | default('') %}
-                  &nbsp;&middot;&nbsp;
-                  <span style="color: #9a9ea6; font-size: 14px;">{{ sender_address }}</span>
-                  {% endif %}
-                </td>
-              </tr>
-              <tr>
-                <td class="content-block" style="font-family: Helvetica, sans-serif; vertical-align: top; padding-bottom: 8px; font-size: 14px; color: #9a9ea6; text-align: center;">
-                  You're receiving this because you subscribed.
-                </td>
-              </tr>
-              {% if unsubscribe_url %}
-              <tr>
-                <td class="content-block" style="font-family: Helvetica, sans-serif; vertical-align: top; font-size: 14px; color: #9a9ea6; text-align: center;">
-                  <a href="{{ unsubscribe_url }}" style="color: #9a9ea6; font-size: 14px; text-decoration: underline;">Unsubscribe</a>
-                </td>
-              </tr>
-              {% endif %}
-            </table>
-          </div>
-          <!-- ===== FOOTER : END ===== -->
+      <!-- ===== FOOTER ===== -->
+      <tr>
+        <td class="footer-cell" style="background-color: #0f172a; padding: 32px 48px; border-radius: 0 0 16px 16px;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+              <td>
+                <p class="footer-brand" style="color: #818cf8; font-size: 13px; font-weight: 700; margin: 0 0 10px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{ newsletter_name | default('The Brief') }}</p>
+                <p class="footer-text" style="color: #475569; font-size: 12px; line-height: 1.65; margin: 0 0 6px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">You're receiving this because you subscribed. We only send things worth reading.</p>
+                {% if sender_address | default('') %}
+                <p class="footer-text" style="color: #475569; font-size: 12px; line-height: 1.65; margin: 0 0 14px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{ sender_address }}</p>
+                {% else %}
+                <p aria-hidden="true" style="font-size: 0; line-height: 0; margin: 0 0 14px 0;">&nbsp;</p>
+                {% endif %}
+                {% if unsubscribe_url %}
+                <p style="margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+                  <a class="footer-link" href="{{ unsubscribe_url }}" style="color: #818cf8; font-size: 12px;">Unsubscribe</a>
+                </p>
+                {% endif %}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
 
-        </div>
-      </td>
-      <td>&nbsp;</td>
-    </tr>
-  </table>
+      <tr>
+        <td aria-hidden="true" height="24" style="height: 24px; font-size: 0; line-height: 0;">&nbsp;</td>
+      </tr>
+
+    </table>
+
+    <!--[if mso]>
+    </td></tr></table>
+    <![endif]-->
+  </div>
+
+  <!--[if mso | IE]>
+  </td></tr></table>
+  <![endif]-->
+</center>
 </body>
 </html>
