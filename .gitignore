@@ -1,0 +1,20 @@
+# Secrets
+.env
+credentials.json
+token.json
+
+# Claude Code local settings (machine-specific)
+.claude/
+
+# Temporary processing files
+.tmp/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS
+.DS_Store
